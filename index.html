@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>设计作品集 | UI/UX · AI融合 · 外观视效</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #F0F2F8 0%, #EAEFFD 40%, #F4F7FF 100%);
+  min-height: 100vh;
+  color: #1E293B;
+  padding-bottom: 6rem;
+}
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  z-index: 999;
+}
+.nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #111;
+}
+.menu a {
+  margin-left: 1.6rem;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.about {
+  max-width: 900px;
+  margin: 10rem auto 4rem;
+  text-align: center;
+  padding: 0 1rem;
+}
+.about h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.2s forwards;
+}
+.about p {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.8;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.4s forwards;
+}
+
+.category {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.6s forwards;
+}
+.cat {
+  padding: 0.7rem 1.6rem;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.4);
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.cat.active {
+  background: #1E293B;
+  color: #fff;
+}
+
+.grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 2.2rem;
+  padding: 0 1rem;
+}
+.item {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,20,60,0.06);
+  cursor: pointer;
+  opacity: 0;
+  animation: fadeUp 0.8s 0.8s forwards;
+  transition: 0.4s cubic-bezier(0.25,1,0.5,1);
+}
+.item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0,20,60,0.1);
+}
+.thumb-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.info {
+  padding: 1.4rem;
+}
+.tag {
+  font-size: 0.75rem;
+  color: #64748B;
+  margin-bottom: 0.3rem;
+}
+.title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #1E293B;
+}
+
+.modal {
+  position: fixed;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  z-index: 9999;
+}
+.modalBox {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 100%;
+  padding: 2.2rem;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.close {
+  position: absolute;
+  top:1rem; right:1.2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+}
+
+@keyframes fadeUp {
+  from { opacity:0; transform: translateY(20px); }
+  to   { opacity:1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">设计作品集</div>
+    <div class="menu">
+      <a href="#about">关于我</a>
+      <a href="#works">作品</a>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="about">
+  <h2>设计师介绍</h2>
+  <p>专注医疗设备UI/UX、AI融合设计、产品外观视效，追求简约、专业、科技感的设计表达。</p>
+</section>
+
+<div class="category" id="works">
+  <div class="cat active" data-type="all">全部作品</div>
+  <div class="cat" data-type="ai">AI融合</div>
+  <div class="cat" data-type="ui">UI/UX</div>
+  <div class="cat" data-type="visual">外观视效</div>
+</div>
+
+<div class="grid">
+  <div class="item" data-type="ui" onclick="openModal()">
+    <img src="脉冲磁场治疗仪1.jpg" class="thumb-img" alt="脉冲磁场治疗仪">
+    <div class="info">
+      <div class="tag">UI/UX 设计</div>
+      <div class="title">脉冲磁场治疗仪</div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modalBox">
+    <div class="close" onclick="closeModal()">×</div>
+    <h3 style="margin-bottom:1.5rem;font-weight:600;">脉冲磁场治疗仪 · 项目详情</h3>
+    <img src="脉冲磁场治疗仪1.jpg" class="modal-img">
+    <img src="脉冲磁场治疗仪2.jpg" class="modal-img">
+    <p style="color:#475569;line-height:1.8;margin-top:1rem;">
+      医疗设备UI/UX设计，支持双通道同步治疗、AI智能管控，适用于健身康复、产后修复等场景，界面简洁专业，操作高效直观。
+    </p>
+  </div>
+</div>
+
+<script>
+const cats = document.querySelectorAll('.cat');
+const items = document.querySelectorAll('.item');
+cats.forEach(c => {
+  c.addEventListener('click', () => {
+    cats.forEach(x => x.classList.remove('active'));
+    c.classList.add('active');
+    const t = c.dataset.type;
+    items.forEach(i => {
+      if(t === 'all' || i.dataset.type === t) i.style.display = 'block';
+      else i.style.display = 'none';
+    })
+  })
+})
+
+function openModal(){ document.getElementById('modal').style.display = 'flex' }
+function closeModal(){ document.getElementById('modal').style.display = 'none' }
+document.getElementById('modal').addEventListener('click', function(e){
+  if(e.target === document.getElementById('modal')) closeModal();
+})
+</script>
+
+</body>
+</html>
