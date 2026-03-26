@@ -148,15 +148,11 @@ header {
   box-shadow: 0 16px 40px rgba(0,20,60,0.1);
 }
 
-.thumb {
+.thumb-img {
   width: 100%;
   height: 220px;
-  background: rgba(210, 220, 240, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #64748B;
-  font-size: 0.9rem;
+  object-fit: cover;
+  display: block;
 }
 
 .info {
@@ -194,7 +190,7 @@ header {
 .modalBox {
   background: #fff;
   border-radius: 20px;
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   padding: 2rem;
   position: relative;
@@ -207,6 +203,14 @@ header {
   top:1rem; right:1.2rem;
   font-size: 1.6rem;
   cursor: pointer;
+}
+
+.modal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 @media (max-width:768px) {
@@ -243,7 +247,11 @@ header {
 
 <div class="grid">
   <div class="item" data-type="ui" onclick="openModal()">
-    <div class="thumb">脉冲磁场治疗仪 - 预览</div>
+    <img 
+      src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/1c451b6d189f43a1a1daf813b9411f33.jpg" 
+      class="thumb-img" 
+      alt="脉冲磁场治疗仪"
+    >
     <div class="info">
       <div class="tag">UI/UX 设计</div>
       <div class="title">脉冲磁场治疗仪</div>
@@ -254,12 +262,19 @@ header {
 <div class="modal" id="modal">
   <div class="modalBox">
     <div class="close" onclick="closeModal()">×</div>
-    <h3 style="margin-bottom:1rem">脉冲磁场治疗仪 · 项目详情</h3>
-    <p style="color:#475569; line-height:1.8; font-size:1rem;">
+    <h3 style="margin-bottom:1.5rem;">脉冲磁场治疗仪 · 完整项目</h3>
+    
+    <img 
+      src="https://p3-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/1c451b6d189f43a1a1daf813b9411f33.jpg" 
+      class="modal-img"
+    >
+    <img 
+      src="https://p26-flow-imagex-sign.byteimg.com/tos-cn-i-a9rns2rl98/a8c62e380ef7445681c9f4ef8509c533.jpg" 
+      class="modal-img"
+    >
+
+    <p style="color:#475569; line-height:1.8; margin-top:1rem;">
       医疗设备UI/UX设计，支持双通道同步治疗、AI智能管控，适用于健身康复、产后修复等场景，界面简洁专业，操作高效直观。
-    </p>
-    <p style="margin-top:1rem;color:#475569; line-height:1.8">
-      包含患者管理、治疗参数调节、状态实时反馈、智能模式切换等完整功能流程设计，整体风格科技通透、简约高级。
     </p>
   </div>
 </div>
