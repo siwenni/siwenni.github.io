@@ -216,6 +216,16 @@ header {
   </div>
 </div>
 
+
+  <!-- 第二个作品：经颅电刺激仪 -->
+<div class="item" data-type="ui" onclick="openModal2()">
+  <img src="JLD1.png" class="thumb-img" alt="经颅电刺激仪">
+  <div class="info">
+    <div class="tag">UI/UX 医疗设备</div>
+    <div class="title">经颅电刺激仪</div>
+  </div>
+</div>
+
 <div class="modal" id="modal">
   <div class="modalBox">
     <div class="close" onclick="closeModal()">×</div>
@@ -224,6 +234,20 @@ header {
     <img src="sxc2.png" class="modal-img">
     <p style="color:#475569;line-height:1.8;margin-top:1rem;">
       医疗设备UI/UX设计，支持双通道同步治疗、AI智能管控，适用于健身塑性、产后修复等场景，界面简洁专业，操作高效直观。
+    </p>
+  </div>
+</div>
+
+  <!-- 经颅电刺激仪 详情弹窗 -->
+<div class="modal" id="modal2">
+  <div class="modalBox">
+    <div class="close" onclick="closeModal2()">×</div>
+    <h3 style="margin-bottom:1.5rem;font-weight:600;">经颅电刺激仪 · 项目详情</h3>
+    <img src="JLD1.png" class="modal-img">
+    <img src="JLD2.png" class="modal-img">
+    <img src="JLD3.png" class="modal-img">
+    <p style="color:#475569;line-height:1.8;margin-top:1rem;">
+医用级经颅电刺激设备UI交互设计，适配临床诊疗、神经康复理疗场景；极简科技视觉，治疗参数可视化分级展示，操作流程严谨合规，兼顾医疗专业性与易用体验。
     </p>
   </div>
 </div>
@@ -250,5 +274,10 @@ document.getElementById('modal').addEventListener('click', function(e){
 })
 </script>
 
+  function openModal2(){ document.getElementById('modal2').style.display = 'flex' }
+function closeModal2(){ document.getElementById('modal2').style.display = 'none' }
+document.getElementById('modal2').addEventListener('click',function(e){
+  if(e.target === document.getElementById('modal2')) closeModal2()
+})
 </body>
 </html>
