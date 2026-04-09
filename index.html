@@ -1,184 +1,40 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>设计作品集 | UI/UX · AI融合 · 外观视效</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>医疗UI设计作品集</title>
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: linear-gradient(135deg, #F0F2F8 0%, #EAEFFD 40%, #F4F7FF 100%);
-  min-height: 100vh;
-  color: #1E293B;
-  padding-bottom: 6rem;
-}
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-  z-index: 999;
-}
-.nav {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1.2rem 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.logo {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #111;
-}
-.menu a {
-  margin-left: 1.6rem;
-  text-decoration: none;
-  color: #333;
-  font-size: 0.95rem;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:system-ui,sans-serif;background:#f0f2f8;color:#1E293B;padding-bottom:80px}
+header{position:fixed;top:0;left:0;width:100%;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);z-index:90}
+.nav{max-width:1000px;margin:auto;padding:16px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-weight:600}
+.menu a{margin-left:20px;text-decoration:none;color:#333}
 
-.about {
-  max-width: 900px;
-  margin: 10rem auto 4rem;
-  text-align: center;
-  padding: 0 1rem;
-}
-.about h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.2s forwards;
-}
-.about p {
-  font-size: 1.05rem;
-  color: #475569;
-  line-height: 1.8;
-  max-width: 600px;
-  margin: 0 auto;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.4s forwards;
-}
+.about{max-width:700px;margin:0 auto;padding:120px 20px 40px;text-align:center}
+.about h2{font-size:26px;margin-bottom:16px}
+.about p{color:#475569;line-height:1.7}
 
-.category {
-  max-width: 900px;
-  margin: 0 auto 3rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 0 1rem;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.6s forwards;
-}
-.cat {
-  padding: 0.7rem 1.6rem;
-  border-radius: 12px;
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.4);
-  cursor: pointer;
-  font-weight: 500;
-  transition: 0.3s;
-}
-.cat.active {
-  background: #1E293B;
-  color: #fff;
-}
+.category{display:flex;gap:12px;justify-content:center;margin-bottom:36px;flex-wrap:wrap;padding:0 20px}
+.cat{padding:10px 18px;border-radius:10px;background:#fff;border:1px solid #e2e8f0;cursor:pointer}
+.cat.active{background:#1E293B;color:#fff}
 
-.grid {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
-  gap: 2.2rem;
-  padding: 0 1rem;
-}
-.item {
-  background: rgba(255,255,255,0.6);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 8px 30px rgba(0,20,60,0.06);
-  cursor: pointer;
-  opacity: 0;
-  animation: fadeUp 0.8s 0.8s forwards;
-  transition: 0.4s cubic-bezier(0.25,1,0.5,1);
-}
-.item:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 16px 40px rgba(0,20,60,0.1);
-}
-.thumb-img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-.info {
-  padding: 1.4rem;
-}
-.tag {
-  font-size: 0.75rem;
-  color: #64748B;
-  margin-bottom: 0.3rem;
-}
-.title {
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: #1E293B;
-}
+.grid{max-width:1000px;margin:auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;padding:0 20px}
+.item{background:#fff;border-radius:16px;overflow:hidden;box-shadow:0 4px 12px rgba(0,20,60,.05)}
+.thumb-img{width:100%;height:200px;object-fit:cover;display:block}
+.info{padding:18px}
+.tag{font-size:12px;color:#64748b;margin-bottom:6px}
+.title{font-size:16px;font-weight:500}
 
-.modal {
-  position: fixed;
-  top:0; left:0; width:100%; height:100%;
-  background: rgba(0,0,0,0.6);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
-  z-index: 9999;
-}
-.modalBox {
-  background: #fff;
-  border-radius: 20px;
-  max-width: 800px;
-  width: 100%;
-  padding: 2.2rem;
-  position: relative;
-  max-height: 90vh;
-  overflow-y: auto;
-}
-.close {
-  position: absolute;
-  top:1rem; right:1.2rem;
-  font-size: 1.6rem;
-  cursor: pointer;
-}
-.modal-img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1.2rem;
-}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;padding:20px;align-items:center;justify-content:center}
+.modalBox{background:#fff;border-radius:20px;max-width:750px;width:100%;max-height:85vh;overflow-y:auto;padding:24px;position:relative}
+.close{position:absolute;right:20px;top:16px;font-size:22px;cursor:pointer}
+.modal-img{width:100%;height:auto;border-radius:12px;margin-bottom:12px}
 
-@keyframes fadeUp {
-  from { opacity:0; transform: translateY(20px); }
-  to   { opacity:1; transform: translateY(0); }
-}
+/* 底部版权声明样式 */
+.footer{position:fixed;left:0;bottom:0;width:100%;background:#fff;padding:12px 0;text-align:center;font-size:12px;color:#666;border-top:1px solid #eee}
 </style>
 </head>
 
@@ -195,92 +51,71 @@ header {
 </header>
 
 <section id="about" class="about">
-  <h2>设计师介绍</h2>
-  <p>专注医疗设备UI/UX、AI融合设计、产品外观视效，追求简约、专业、科技感的设计表达。</p>
+  <h2>医疗设备UI/UX设计</h2>
+  <p>专注医疗康复类产品界面设计，追求专业、严谨、易用的用户体验。</p>
 </section>
 
 <div class="category" id="works">
-  <div class="cat active" data-type="all">全部作品</div>
+  <div class="cat active" data-type="all">全部</div>
   <div class="cat" data-type="ai">AI融合</div>
   <div class="cat" data-type="ui">UI/UX</div>
-  <div class="cat" data-type="visual">外观视效</div>
+  <div class="cat" data-type="visual">外观</div>
 </div>
 
 <div class="grid">
-
-  <!-- 作品1：脉冲磁场治疗仪 -->
-  <div class="item" data-type="ui" onclick="openModal()">
-    <img src="sxc1.png" class="thumb-img" alt="脉冲磁场治疗仪">
+  <div class="item" data-type="ui" onclick="openModal(1)">
+    <img src="sxc1.png" class="thumb-img" loading="lazy">
     <div class="info">
       <div class="tag">UI/UX 医疗设备</div>
       <div class="title">脉冲磁场治疗仪</div>
     </div>
   </div>
 
-  <!-- 作品2：经颅电刺激仪 -->
-  <div class="item" data-type="ui" onclick="openModal2()">
-    <img src="JLD1.png" class="thumb-img" alt="经颅电刺激仪">
+  <div class="item" data-type="ui" onclick="openModal(2)">
+    <img src="JLD1.png" class="thumb-img" loading="lazy">
     <div class="info">
       <div class="tag">UI/UX 医疗设备</div>
       <div class="title">经颅电刺激仪</div>
     </div>
   </div>
-
 </div>
 
-<!-- 弹窗1 -->
-<div class="modal" id="modal">
+<div class="modal" id="modal1">
   <div class="modalBox">
-    <div class="close" onclick="closeModal()">×</div>
-    <h3 style="margin-bottom:1.5rem;font-weight:600;">脉冲磁场治疗仪 · 项目详情</h3>
-    <img src="sxc1.png" class="modal-img">
-    <img src="sxc2.png" class="modal-img">
-    <p style="color:#475569;line-height:1.8;margin-top:1rem;">
-      医疗设备UI/UX设计，支持双通道同步治疗、AI智能管控，适用于健身康复、产后修复等场景，界面简洁专业，操作高效直观。
-    </p>
+    <div class="close" onclick="closeModal(1)">×</div>
+    <img src="sxc1.png" loading="lazy">
+    <img src="sxc2.png" loading="lazy">
   </div>
 </div>
 
-<!-- 弹窗2 -->
 <div class="modal" id="modal2">
   <div class="modalBox">
-    <div class="close" onclick="closeModal2()">×</div>
-    <h3 style="margin-bottom:1.5rem;font-weight:600;">经颅电刺激仪 · 项目详情</h3>
-    <img src="JLD1.png" class="modal-img">
-    <img src="JLD2.png" class="modal-img">
-    <img src="JLD3.png" class="modal-img">
-    <p style="color:#475569;line-height:1.8;margin-top:1rem;">
-      医用级经颅电刺激设备UI交互设计，适配临床诊疗、神经康复理疗场景；极简科技视觉，治疗参数可视化分级展示，操作流程严谨合规，兼顾医疗专业性与易用体验。
-    </p>
+    <div class="close" onclick="closeModal(2)">×</div>
+    <img src="JLD1.png" loading="lazy">
+    <img src="JLD2.png" loading="lazy">
+    <img src="JLD3.png" loading="lazy">
   </div>
+</div>
+
+<!-- 底部防盗版声明 -->
+<div class="footer">
+  © 2026 倪思雯原创医疗UI设计作品 · 禁止私自保存、盗用、商用及AI训练使用
 </div>
 
 <script>
-// 作品1
-function openModal(){ document.getElementById('modal').style.display = 'flex' }
-function closeModal(){ document.getElementById('modal').style.display = 'none' }
-document.getElementById('modal').addEventListener('click', function(e){
-  if(e.target === document.getElementById('modal')) closeModal();
-})
+function openModal(n){document.getElementById('modal'+n).style.display='flex'}
+function closeModal(n){document.getElementById('modal'+n).style.display='none'}
 
-// 作品2
-function openModal2(){ document.getElementById('modal2').style.display = 'flex' }
-function closeModal2(){ document.getElementById('modal2').style.display = 'none' }
-document.getElementById('modal2').addEventListener('click',function(e){
-  if(e.target === document.getElementById('modal2')) closeModal2()
-})
-
-// 分类切换
-const cats = document.querySelectorAll('.cat');
-const items = document.querySelectorAll('.item');
-cats.forEach(c => {
-  c.addEventListener('click', () => {
-    cats.forEach(x => x.classList.remove('active'));
+const cats=document.querySelectorAll('.cat');
+const items=document.querySelectorAll('.item');
+cats.forEach(c=>{
+  c.addEventListener('click',()=>{
+    cats.forEach(x=>x.classList.remove('active'));
     c.classList.add('active');
-    const t = c.dataset.type;
-    items.forEach(i => {
-      if(t === 'all' || i.dataset.type === t) i.style.display = 'block';
-      else i.style.display = 'none';
+    let t=c.dataset.type;
+    items.forEach(i=>{
+      if(t==='all'||i.dataset.type===t) i.style.display='block';
+      else i.style.display='none';
     })
   })
 })
